@@ -1,0 +1,22 @@
+@use "variables" as *;
+@use "reset";
+@use "header";
+@use "footer";
+
+html,
+body {
+  font-family: "Noto Sans", sans-serif;
+  font-size: 16px;
+  color: $font-color-main;
+}
+
+.container {
+  padding: 0 5rem;
+}
+
+.wrapper {
+  width: 100%;
+  max-width: 1290px;
+  padding: 0 1rem;
+  margin: 0 auto;
+}
