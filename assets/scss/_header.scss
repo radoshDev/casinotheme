@@ -31,6 +31,9 @@
       }
     }
     .header_tools {
+      &_search {
+        cursor: pointer;
+      }
     }
   }
 }

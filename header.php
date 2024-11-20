@@ -13,7 +13,9 @@
 	<div class="header">
 		<div class="container header_container">
 			<div class="header_logo">
-				<img src="<?php echo get_site_icon_url() ?>" alt="<?php echo get_bloginfo('name') ?>" />
+				<a href="<?php echo get_home_url() ?>">
+					<img src="<?php echo get_site_icon_url() ?>" alt="<?php echo get_bloginfo('name') ?>" />
+				</a>
 			</div>
 			<?php wp_nav_menu(array(
 					'theme_location' => 'menu_header',
@@ -21,7 +23,9 @@
 					'menu_class' => 'header_menu'
 				)) ?>
 			<div class="header_tools">
-			<?php get_template_part('templates/icons/search', 'icon', array("size" => 26)) ?>
+				<div role="button" class="header_tools_search" id="header_search">
+					<?php get_template_part('templates/icons/search', 'icon', array("size" => 26)) ?>
+				</div>
 			</div>
 		</div>
 	</div>

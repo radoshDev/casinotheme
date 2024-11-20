@@ -1,0 +1,42 @@
+.underline_anim {
+  padding-bottom: 6px;
+  width: max-content;
+  background-image: linear-gradient(to right, currentColor 0%, currentColor 100%);
+  background-position: 0 100%;
+  background-repeat: no-repeat;
+  -webkit-background-size: 0 1px;
+  background-size: 0 1px;
+  -webkit-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  box-sizing: border-box;
+
+  &.show_underline_on_hover {
+    &:hover {
+      animation: underline_hover_on 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+    }
+  }
+  &.hide_underline_on_hover {
+    animation: underline_hover_on 0.8s cubic-bezier(0.25, 0.8, 0.25, 1) both;
+    &:hover {
+      animation-name: underline_hover_off;
+    }
+  }
+}
+
+@keyframes underline_hover_on {
+  0% {
+    background-size: 0 1px;
+  }
+  100% {
+    background-size: 100% 1px;
+  }
+}
+
+@keyframes underline_hover_off {
+  0% {
+    background-size: 100% 1px;
+  }
+  100% {
+    background-size: 0 1px;
+  }
+}
