@@ -4,7 +4,7 @@ function casinotheme_setup()
 {
 	load_theme_textdomain('casinotheme', get_template_directory_uri() . '/lang');
 	add_theme_support('title-tag');
-	add_theme_support('post-thumbnail');
+	add_theme_support('post-thumbnails');
 
 	register_nav_menus(array(
 		'menu_header' => __('Header Menu', 'casinotheme'),
@@ -30,6 +30,7 @@ add_action('wp_enqueue_scripts', "casinotheme_assets");
 require_once get_template_directory() . '/inc/custom-post-types.php';
 require_once get_template_directory() . '/inc/theme-customize.php';
 require_once get_template_directory() . '/inc/class-menu-footer.php';
+require_once get_template_directory() . '/inc/shortcodes.php';
 
 
 
