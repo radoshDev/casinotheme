@@ -1,0 +1,64 @@
+@use "variables" as *;
+@use "mixins" as *;
+
+.content {
+  .wp-block-cover {
+    margin: 0 1.25rem 2rem;
+    min-height: 70vh;
+    border-radius: 1rem;
+    padding: 30px;
+    @include device(l) {
+      margin: 0 4rem 2rem;
+      padding: 30px;
+      justify-content: flex-start;
+    }
+
+    .wp-block-cover__inner-container {
+      @include device(xl) {
+        width: 50%;
+      }
+
+      .wp-block-heading {
+        margin-bottom: 2rem;
+        text-shadow: black 1px 0 10px;
+        @include device(l) {
+          font-size: 3.5rem !important;
+        }
+      }
+
+      & > p {
+        text-shadow: black 1px 0 10px;
+      }
+
+      .wp-block-buttons {
+        margin-top: 1.5rem;
+      }
+    }
+  }
+}
+.wp-block-buttons {
+  .wp-element-button {
+    padding: 17px 45px;
+    cursor: pointer;
+    display: inline-flex;
+    align-items: center;
+    vertical-align: top;
+    box-sizing: border-box;
+    border-radius: 30px;
+    letter-spacing: 0;
+    white-space: nowrap;
+    height: auto;
+    max-width: 100%;
+    color: $color-white;
+    background-color: $color-red;
+    border-color: $color-red;
+    border-width: 0;
+    box-shadow: 0 7px 25px rgba(234, 1, 29, 0.2);
+    transition: all 0.3s ease;
+
+    &:hover {
+      border-color: $color-red-hover;
+      background-color: $color-red-hover;
+    }
+  }
+}

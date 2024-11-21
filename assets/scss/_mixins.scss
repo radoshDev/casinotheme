@@ -1,0 +1,14 @@
+@mixin device($size, $range: min) {
+  $width: 1000px;
+  @if $size == xl {
+    $width: 1320px;
+  } @else if $size == l {
+    $width: 1024px;
+  } @else if $size == m {
+    $width: 770px;
+  }
+
+  @media (#{$range}-width: $width) {
+    @content;
+  }
+}

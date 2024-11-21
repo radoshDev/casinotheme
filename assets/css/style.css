@@ -487,7 +487,7 @@ h6,
 }
 .latest-posts_grid {
   display: grid;
-  grid-template-columns: repeat(auto-fit, 320px);
+  grid-template-columns: repeat(auto-fit, 295px);
   gap: 30px;
   justify-content: center;
 }
@@ -550,6 +550,64 @@ h6,
 }
 .latest-posts_grid_item:hover .latest-posts_grid_item_image img {
   transform: scale(1.05);
+}
+
+.content .wp-block-cover {
+  margin: 0 1.25rem 2rem;
+  min-height: 70vh;
+  border-radius: 1rem;
+  padding: 30px;
+}
+@media (min-width: 1024px) {
+  .content .wp-block-cover {
+    margin: 0 4rem 2rem;
+    padding: 30px;
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 1320px) {
+  .content .wp-block-cover .wp-block-cover__inner-container {
+    width: 50%;
+  }
+}
+.content .wp-block-cover .wp-block-cover__inner-container .wp-block-heading {
+  margin-bottom: 2rem;
+  text-shadow: black 1px 0 10px;
+}
+@media (min-width: 1024px) {
+  .content .wp-block-cover .wp-block-cover__inner-container .wp-block-heading {
+    font-size: 3.5rem !important;
+  }
+}
+.content .wp-block-cover .wp-block-cover__inner-container > p {
+  text-shadow: black 1px 0 10px;
+}
+.content .wp-block-cover .wp-block-cover__inner-container .wp-block-buttons {
+  margin-top: 1.5rem;
+}
+
+.wp-block-buttons .wp-element-button {
+  padding: 17px 45px;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  vertical-align: top;
+  box-sizing: border-box;
+  border-radius: 30px;
+  letter-spacing: 0;
+  white-space: nowrap;
+  height: auto;
+  max-width: 100%;
+  color: #fcfcfc;
+  background-color: #ea011d;
+  border-color: #ea011d;
+  border-width: 0;
+  box-shadow: 0 7px 25px rgba(234, 1, 29, 0.2);
+  transition: all 0.3s ease;
+}
+.wp-block-buttons .wp-element-button:hover {
+  border-color: #cb0018;
+  background-color: #cb0018;
 }
 
 .footer {
@@ -638,9 +696,18 @@ body {
   padding: 0 5rem;
 }
 
-.wrapper {
+.wrapper,
+.content > p,
+.content > .wp-block-heading {
   width: 100%;
-  max-width: 1290px;
   padding: 0 1rem;
-  margin: 0 auto;
+  margin-left: auto;
+  margin-right: auto;
+}
+@media (min-width: 1320px) {
+  .wrapper,
+  .content > p,
+  .content > .wp-block-heading {
+    max-width: 1320px;
+  }
 }/*# sourceMappingURL=style.css.map */
