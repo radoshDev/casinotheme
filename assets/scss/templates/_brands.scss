@@ -1,0 +1,32 @@
+.brands {
+  position: relative;
+  display: flex;
+  overflow: hidden;
+  user-select: none;
+  gap: 20px;
+
+  &_slider {
+    flex-shrink: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: space-around;
+    min-width: 100%;
+    animation: scroll 20s linear infinite;
+
+    &_slide {
+      flex: 0 0 auto;
+      transition: all 0.1s ease-in-out;
+      height: 84px;
+      width: auto;
+    }
+  }
+}
+
+@keyframes scroll {
+  from {
+    transform: translateX(0);
+  }
+  to {
+    transform: translateX(calc(-100% - 20px));
+  }
+}
