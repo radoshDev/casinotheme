@@ -1,41 +1,40 @@
 @use "variables" as *;
 @use "mixins" as *;
 
-.content {
-  .wp-block-cover {
-    margin: 0 1.25rem 2rem;
-    min-height: 70vh;
-    border-radius: 1rem;
+.wp-block-cover {
+  margin: 0 1.25rem 2rem;
+  min-height: 70vh;
+  border-radius: 1rem;
+  padding: 30px;
+  @include device(l) {
+    margin: 0 4rem 2rem;
     padding: 30px;
-    @include device(l) {
-      margin: 0 4rem 2rem;
-      padding: 30px;
-      justify-content: flex-start;
+    justify-content: flex-start;
+  }
+
+  .wp-block-cover__inner-container {
+    @include device(xl) {
+      width: 50%;
     }
 
-    .wp-block-cover__inner-container {
-      @include device(xl) {
-        width: 50%;
+    .wp-block-heading {
+      margin-bottom: 2rem;
+      text-shadow: black 1px 0 10px;
+      @include device(l) {
+        font-size: 3.5rem !important;
       }
+    }
 
-      .wp-block-heading {
-        margin-bottom: 2rem;
-        text-shadow: black 1px 0 10px;
-        @include device(l) {
-          font-size: 3.5rem !important;
-        }
-      }
+    & > p {
+      text-shadow: black 1px 0 10px;
+    }
 
-      & > p {
-        text-shadow: black 1px 0 10px;
-      }
-
-      .wp-block-buttons {
-        margin-top: 1.5rem;
-      }
+    .wp-block-buttons {
+      margin-top: 1.5rem;
     }
   }
 }
+
 .wp-block-buttons {
   .wp-element-button {
     padding: 17px 45px;
@@ -57,8 +56,44 @@
     transition: all 0.3s ease;
 
     &:hover {
+      color: $color-white;
       border-color: $color-red-hover;
       background-color: $color-red-hover;
+    }
+  }
+}
+
+.wp-block-quote {
+  background-color: #edeef1;
+  padding: 2rem 2.5rem;
+  border-radius: 1rem;
+  border-left: 2px solid $color-red;
+  & > * {
+    margin: 0;
+  }
+  &::before {
+    content: "❝";
+    display: block;
+    font-size: 4rem;
+    line-height: 1;
+    color: $color-red;
+    margin-bottom: -10px;
+  }
+}
+.wp-block-list {
+  li {
+    margin: 0.25rem 0;
+    &::marker {
+      color: $color-red;
+    }
+  }
+}
+
+ol.wp-block-list {
+  padding-left: 50px;
+  li {
+    &::marker {
+      font-size: 1.4rem;
     }
   }
 }

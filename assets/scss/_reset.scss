@@ -131,16 +131,6 @@ a:hover {
   text-decoration: none;
 }
 
-a:not([href]):not([class]) {
-  color: inherit;
-  text-decoration: none;
-}
-
-a:not([href]):not([class]):hover {
-  color: inherit;
-  text-decoration: none;
-}
-
 pre,
 code,
 kbd,
@@ -330,74 +320,36 @@ template {
   display: none !important;
 }
 
-h1,
+h1 {
+  font-size: 57px;
+  margin-bottom: 0.5em;
+}
+
 h2,
 h3,
 h4,
 h5,
-h6,
-.h1,
-.h2,
-.h3,
-.h4,
-.h5,
-.h6 {
-  margin-bottom: 0.5rem;
-  font-weight: 500;
-  line-height: 1.2;
+h6 {
+  margin-top: 0.72em;
+  margin-bottom: 0.56em;
 }
 
-h1,
-.h1 {
-  font-size: 2.5rem;
+h2 {
+  font-size: 46px;
 }
 
-@media (max-width: 1200px) {
-  h1,
-  .h1 {
-    font-size: calc(1.375rem + 1.5vw);
-  }
+h3 {
+  font-size: 35px;
 }
 
-h2,
-.h2 {
-  font-size: 2rem;
-
-  @media (max-width: 1200px) {
-    font-size: calc(1.325rem + 0.9vw);
-  }
+h4 {
+  font-size: 28px;
 }
 
-h3,
-.h3 {
-  font-size: 1.75rem;
+h5 {
+  font-size: 24px;
 }
 
-@media (max-width: 1200px) {
-  h3,
-  .h3 {
-    font-size: calc(1.3rem + 0.6vw);
-  }
-}
-
-h4,
-.h4 {
-  font-size: 1.5rem;
-}
-
-@media (max-width: 1200px) {
-  h4,
-  .h4 {
-    font-size: calc(1.275rem + 0.3vw);
-  }
-}
-
-h5,
-.h5 {
-  font-size: 1.25rem;
-}
-
-h6,
-.h6 {
-  font-size: 1rem;
+h6 {
+  font-size: 24px;
 }

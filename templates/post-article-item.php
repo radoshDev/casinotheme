@@ -14,15 +14,15 @@ $category = $categories[0];
 	<?php endif; ?>
 	<div class="post-article-item_content<?php $posts_type == 'blog' ? ' line' : '' ?>">
 		<div class="post-article-item_meta">
+			<a href="<?php echo get_category_link($category->term_id) ?>" class="post-article-item_meta_category">
+				<?php echo $category->name ?>
+			</a>
 			<?php if ($is_feature): ?>
 				<span class="post-article-item_meta_date">
 					<span class="day-of-month"><?php echo get_the_date('j'); ?></span>
 					<span class="month"><?php echo get_the_date('M'); ?></span>
 				</span>
 			<?php else: ?>
-				<a href="<?php echo get_category_link($category->term_id) ?>" class="post-article-item_meta_category">
-				<?php echo $category->name ?>
-				</a>
 				<span class="post-article-item_meta_date dot">
 					<?php echo esc_html(get_the_date('M j, Y')) ?>
 				</span>

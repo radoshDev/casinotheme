@@ -17,6 +17,7 @@ body {
   font-family: "Noto Sans", sans-serif;
   font-size: 16px;
   color: $font-color-main;
+  line-height: 1.6;
 }
 
 .container {
@@ -24,8 +25,9 @@ body {
 }
 
 .wrapper,
-.content > p,
-.content > .wp-block-heading {
+.content.home > p,
+.content.home > h1,
+.content.home > .wp-block-heading {
   width: 100%;
   padding: 0 1rem;
   margin-left: auto;
@@ -33,6 +35,14 @@ body {
 
   @include device(xl) {
     max-width: 1320px;
+  }
+}
+
+.content :where(p, blockquote, li, table, .wp-block-heading) a {
+  color: $color-red;
+  transition: color 0.3s ease;
+  &:hover {
+    color: $color-red-hover;
   }
 }
 

@@ -25,15 +25,10 @@ function casinotheme_assets()
 
 add_action('wp_enqueue_scripts', "casinotheme_assets");
 
-
-
 require_once get_template_directory() . '/inc/custom-post-types.php';
 require_once get_template_directory() . '/inc/theme-customize.php';
 require_once get_template_directory() . '/inc/class-menu-footer.php';
-require_once get_template_directory() . '/inc/shortcodes.php';
-
-
-
+require_once get_template_directory() . '/inc/shortcodes/index.php';
 
 function casinotheme_debug($args)
 {

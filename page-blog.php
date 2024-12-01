@@ -7,7 +7,7 @@
 	<?php get_template_part('templates/banner', null, array('anchor' => $posts_id)) ?>
 	<div class="wrapper">
 		<?php the_content();
-		do_shortcode('[latest-post]');
+		echo do_shortcode('[latest-post]');
 		?>
 	</div>
 	
