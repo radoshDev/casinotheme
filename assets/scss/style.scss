@@ -4,6 +4,7 @@
 @use "animation";
 @use "header";
 @use "./not-found-page";
+@use "./search-page";
 @use "templates/latest-posts";
 @use "./templates/latest_news";
 @use "./templates/brands";
@@ -21,12 +22,16 @@ body {
   line-height: 1.6;
 }
 
+.overflow-y-hidden {
+  overflow-y: hidden;
+}
+
 .container {
   padding: 0 5rem;
 }
 
 .wrapper,
-.content.wrap-text > :where(p, h1, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns) {
+.content.wrap-text > :where(p, h1, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns, .wp-block-table, .wp-block-search) {
   width: 100%;
   padding: 0 1rem;
   margin-left: auto;
@@ -114,8 +119,26 @@ body {
   }
 }
 
-.custom-btn {
+.custom-btn,
+.wp-element-button,
+#searchsubmit {
   @include button;
+}
+
+#searchform {
+  margin-bottom: 2rem;
+  & > div {
+    display: flex;
+    gap: 1.5rem;
+    input[type="text"] {
+      flex: 1;
+      @include input;
+    }
+  }
+}
+
+.wp-block-search__input {
+  @include input;
 }
 
 .wpcf7-form {

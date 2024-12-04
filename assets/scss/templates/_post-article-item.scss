@@ -5,6 +5,11 @@
   display: grid;
   grid-template-columns: 210px auto;
   column-gap: 30px;
+
+  &.search {
+    grid-template-columns: 300px;
+  }
+
   &_image {
     border-radius: 1rem;
     overflow: hidden;
@@ -84,8 +89,6 @@
     grid-area: 1 / 1 / span 3 / span 1;
     position: relative;
     #{$this} {
-      &_image {
-      }
       &_content {
         display: flex;
         align-items: flex-start;

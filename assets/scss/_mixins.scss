@@ -7,6 +7,8 @@
   } @else if $size == l {
     $width: 1024px;
   } @else if $size == m {
+    $width: 900px;
+  } @else if $size == s {
     $width: 770px;
   }
 
@@ -38,5 +40,18 @@
     color: $color-white;
     border-color: $color-red-hover;
     background-color: $color-red-hover;
+  }
+}
+
+@mixin input {
+  display: block;
+  border: none;
+  border-bottom: 2px solid transparent;
+  background-color: #edeef1;
+  outline: none;
+  padding: 0.5rem 1rem;
+
+  &:focus-within {
+    border-bottom-color: $color-gray-light;
   }
 }
