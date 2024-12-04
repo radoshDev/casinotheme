@@ -14,7 +14,8 @@ $category = $categories[0];
 	<?php endif; ?>
 	<div class="post-article-item_content<?php $posts_type == 'blog' ? ' line' : '' ?>">
 		<div class="post-article-item_meta">
-			<a href="<?php echo get_category_link($category->term_id) ?>" class="post-article-item_meta_category">
+			<a href="<?php echo get_category_link($category->term_id) ?>" 
+				 class="post-article-item_meta_category<?php if($is_feature){ echo ' badge';} ?>">
 				<?php echo $category->name ?>
 			</a>
 			<?php if ($is_feature): ?>

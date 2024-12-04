@@ -1,7 +1,7 @@
 <?php
 get_header()
 ?>
-<main class="content home">
+<main class="content wrap-text">
 	<?php the_content(); ?>
 </main>
 

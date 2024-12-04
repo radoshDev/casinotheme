@@ -37,29 +37,7 @@
 
 .wp-block-buttons {
   .wp-element-button {
-    padding: 17px 45px;
-    cursor: pointer;
-    display: inline-flex;
-    align-items: center;
-    vertical-align: top;
-    box-sizing: border-box;
-    border-radius: 30px;
-    letter-spacing: 0;
-    white-space: nowrap;
-    height: auto;
-    max-width: 100%;
-    color: $color-white;
-    background-color: $color-red;
-    border-color: $color-red;
-    border-width: 0;
-    box-shadow: 0 7px 25px rgba(234, 1, 29, 0.2);
-    transition: all 0.3s ease;
-
-    &:hover {
-      color: $color-white;
-      border-color: $color-red-hover;
-      background-color: $color-red-hover;
-    }
+    @include button;
   }
 }
 

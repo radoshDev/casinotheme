@@ -3,9 +3,8 @@
 
 <main class="content">
 	<?php get_template_part('templates/banner') ?>
-	<div class="content wrap-text">
-		<?php the_content();
-		?>
+	<div class="wrapper">
+		<?php echo get_the_archive_description();		?>
 	</div>
 	
 </main>

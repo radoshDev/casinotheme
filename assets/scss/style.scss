@@ -3,6 +3,7 @@
 @use "reset";
 @use "animation";
 @use "header";
+@use "./not-found-page";
 @use "templates/latest-posts";
 @use "./templates/latest_news";
 @use "./templates/brands";
@@ -25,9 +26,7 @@ body {
 }
 
 .wrapper,
-.content.home > p,
-.content.home > h1,
-.content.home > .wp-block-heading {
+.content.wrap-text > :where(p, h1, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns) {
   width: 100%;
   padding: 0 1rem;
   margin-left: auto;
@@ -38,11 +37,42 @@ body {
   }
 }
 
-.content :where(p, blockquote, li, table, .wp-block-heading) a {
-  color: $color-red;
-  transition: color 0.3s ease;
-  &:hover {
-    color: $color-red-hover;
+.content {
+  :where(p, blockquote, li, table, .wp-block-heading) a {
+    color: $color-red;
+    transition: color 0.3s ease;
+    &:hover {
+      color: $color-red-hover;
+    }
+  }
+  img {
+    border-radius: 0.875rem;
+  }
+  .saboxplugin-wrap {
+    border-radius: 0.875rem;
+    background-color: #edeef1;
+    border: none;
+    padding: 1rem;
+
+    .saboxplugin-gravatar {
+      img {
+        border-radius: 100px;
+      }
+    }
+    .saboxplugin-authorname {
+      .author {
+        font-size: 19px;
+      }
+    }
+    .saboxplugin-desc {
+      margin-top: 1rem;
+      p {
+        font-size: 1rem !important;
+      }
+    }
+  }
+  > *:last-child {
+    margin-bottom: 2rem;
   }
 }
 
@@ -50,11 +80,15 @@ body {
   margin-top: 100px;
   margin-bottom: 100px;
 }
+.text-center {
+  text-align: center;
+}
 
 .content-posts {
   &_title {
     font-size: 3.5rem;
     margin-bottom: 1.5rem;
+    margin-top: 0;
     font-weight: 900;
   }
   &_subtitle {
@@ -62,5 +96,45 @@ body {
     text-transform: uppercase;
     margin-bottom: 0.5rem;
     font-weight: 500;
+  }
+}
+
+.badge {
+  background-color: $color-blue;
+  border-radius: 1rem;
+  padding: 0.25em 1em;
+  color: $color-white;
+  text-transform: uppercase;
+  font-size: 11px;
+  letter-spacing: 0.6px;
+  transition: all 0.3s ease;
+  &:hover {
+    background-color: $color-white;
+    color: $font-color-main;
+  }
+}
+
+.custom-btn {
+  @include button;
+}
+
+.wpcf7-form {
+  .wpcf7-submit {
+    @include button;
+  }
+  .wpcf7-form-control-wrap {
+    display: block;
+    .wpcf7-form-control {
+      display: block;
+      border: none;
+      border-bottom: 2px solid transparent;
+      background-color: #edeef1;
+      outline: none;
+      padding: 0.5rem 1rem;
+
+      &:focus-within {
+        border-bottom-color: $color-gray-light;
+      }
+    }
   }
 }

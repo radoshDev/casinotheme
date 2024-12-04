@@ -61,11 +61,13 @@
           font-size: 14px;
 
           &::before {
-            content: "•";
+            content: "";
+            width: 5px;
+            height: 5px;
+            border-radius: 5px;
+            background-color: $color-gray-light;
             display: inline-block;
-            vertical-align: text-bottom;
-            font-size: 14px;
-            font-weight: 400;
+            vertical-align: middle;
             margin: 0 0.75em 0 0.45em;
           }
         }
@@ -73,6 +75,8 @@
       &_title {
         font-size: 1.5rem;
         font-weight: 500;
+        margin-top: 0;
+        line-height: 1.2;
       }
       &:hover {
         .latest-posts_grid_item_image {

@@ -1,0 +1,36 @@
+@use "./variables" as *;
+@use "./mixins" as *;
+
+.post-404 {
+  .page-title {
+    font-size: 10rem;
+    line-height: 1;
+    color: $color-red;
+    background: linear-gradient(45deg, #ff0f7b, #f89b29);
+    background-clip: text;
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 200% 100%;
+    animation: gradient_anim 5s ease infinite;
+    padding: 0.1em 0;
+    margin-bottom: 0;
+
+    @include device(m) {
+      font-size: 12rem;
+      padding-bottom: 0.22em;
+    }
+  }
+}
+
+@keyframes gradient_anim {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 100% 0;
+  }
+
+  100% {
+    background-position: 0 0;
+  }
+}
