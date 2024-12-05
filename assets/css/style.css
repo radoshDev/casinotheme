@@ -323,8 +323,13 @@ template {
 }
 
 h1 {
-  font-size: 57px;
+  font-size: 2.5;
   margin-bottom: 0.5em;
+}
+@media (min-width: 900px) {
+  h1 {
+    font-size: 57px;
+  }
 }
 
 h2,
@@ -337,23 +342,43 @@ h6 {
 }
 
 h2 {
-  font-size: 46px;
+  font-size: 2rem;
+}
+@media (min-width: 900px) {
+  h2 {
+    font-size: 2.875rem;
+  }
 }
 
 h3 {
-  font-size: 35px;
+  font-size: 1.75rem;
+}
+@media (min-width: 900px) {
+  h3 {
+    font-size: 2.125rem;
+  }
 }
 
 h4 {
-  font-size: 28px;
+  font-size: 1.5rem;
+}
+@media (min-width: 900px) {
+  h4 {
+    font-size: 1.75rem;
+  }
 }
 
 h5 {
-  font-size: 24px;
+  font-size: 1.25rem;
+}
+@media (min-width: 900px) {
+  h5 {
+    font-size: 1.5rem;
+  }
 }
 
 h6 {
-  font-size: 24px;
+  font-size: 1.125rem;
 }
 
 .underline_anim {
@@ -400,6 +425,7 @@ h6 {
   display: flex;
   justify-content: space-between;
   align-items: center;
+  gap: 1.5rem;
 }
 @media (min-width: 900px) {
   .header .header_container {
@@ -444,6 +470,7 @@ h6 {
   display: flex;
   flex-direction: column;
   font-size: 1.5rem;
+  z-index: 10;
 }
 @media (min-width: 900px) {
   .header .header_container .header_menu {
@@ -624,10 +651,32 @@ h6 {
 }
 
 .latest-news_grid {
-  display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  grid-template-rows: repeat(3, 210px);
-  gap: 30px;
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 770px) {
+  .latest-news_grid {
+    flex-direction: row;
+  }
+}
+@media (min-width: 900px) {
+  .latest-news_grid_feature {
+    flex: 1;
+  }
+}
+.latest-news_grid_posts {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+@media (min-width: 900px) {
+  .latest-news_grid_posts {
+    flex: 1;
+  }
+}
+.latest-news_grid_posts .post-article-item_image img {
+  max-width: 250px;
 }
 
 .brands {
@@ -668,10 +717,15 @@ h6 {
   margin-bottom: 3rem;
 }
 .casinotheme_banner.light {
-  padding: 150px 0;
+  padding: 50px 0;
   color: #fcfcfc;
   text-shadow: black 1px 0 10px;
   position: relative;
+}
+@media (min-width: 770px) {
+  .casinotheme_banner.light {
+    padding: 150px 0;
+  }
 }
 .casinotheme_banner.light::before {
   content: "";
@@ -724,32 +778,34 @@ h6 {
 
 .subscribe {
   padding: 100px 20px;
-  background: no-repeat left 20% url("./../img/football player.webp"), linear-gradient(90deg, #dd7833, #c9332f);
+  background: linear-gradient(90deg, #dd7833, #c9332f);
   color: #fcfcfc;
+  margin-bottom: 0 !important;
 }
 .subscribe_container {
   max-width: 550px;
   margin: 0 auto;
   text-align: center;
 }
-.subscribe_container_title {
+.subscribe_title {
   font-size: 2.125rem;
   margin: 27px 0 25px;
 }
-.subscribe_container_input-box {
+.subscribe_input-box {
   display: flex;
 }
-.subscribe_container_input-box_field {
+.subscribe_input-box_field {
   flex: 1;
   border: none;
   background-color: #fff;
   border-radius: 5em 0 0 5em;
   padding: 11px 30px;
+  width: 100%;
 }
-.subscribe_container_input-box_field:focus {
+.subscribe_input-box_field:focus {
   outline: none;
 }
-.subscribe_container_input-box_btn {
+.subscribe_input-box_btn {
   background-color: #fff;
   border: none;
   border-radius: 0 5em 5em 0;
@@ -762,10 +818,10 @@ h6 {
   font-size: 0.875rem;
   transition: color 0.3s ease;
 }
-.subscribe_container_input-box_btn:hover {
+.subscribe_input-box_btn:hover {
   color: #cb0018;
 }
-.subscribe_container_input-box_btn::before {
+.subscribe_input-box_btn::before {
   content: "";
   width: 1px;
   height: 60%;
@@ -775,11 +831,11 @@ h6 {
   position: absolute;
   transform: translateY(-50%);
 }
-.subscribe_container_agreement {
+.subscribe_agreement {
   margin-top: 2rem;
   display: inline-block;
 }
-.subscribe_container_agreement input {
+.subscribe_agreement input {
   display: inline-block;
   margin-right: 0.5rem;
   width: 1.15em;
@@ -788,17 +844,16 @@ h6 {
   border-radius: 0.15em;
   vertical-align: bottom;
 }
-.subscribe_container_agreement a {
+.subscribe_agreement a {
   text-decoration: underline;
   transition: opacity 0.3s ease;
 }
-.subscribe_container_agreement a:hover {
+.subscribe_agreement a:hover {
   opacity: 0.75;
 }
 
 .post-article-item {
-  display: grid;
-  grid-template-columns: 210px auto;
+  display: flex;
   -moz-column-gap: 30px;
        column-gap: 30px;
 }
@@ -809,7 +864,12 @@ h6 {
   border-radius: 1rem;
   overflow: hidden;
   display: block;
-  height: 100%;
+  flex: 1;
+}
+@media (min-width: 900px) {
+  .post-article-item_image {
+    flex: 2;
+  }
 }
 .post-article-item_image img {
   aspect-ratio: 1/1;
@@ -820,6 +880,12 @@ h6 {
 }
 .post-article-item_content {
   margin-top: 1.5rem;
+  flex: 2;
+}
+@media (min-width: 900px) {
+  .post-article-item_content {
+    flex: 3;
+  }
 }
 .post-article-item_content.line {
   padding-left: 50px;
@@ -896,15 +962,22 @@ h6 {
   font-weight: bold;
 }
 .post-article-item.feature .post-article-item_meta_date .day-of-month {
-  font-size: 4rem;
+  font-size: 2rem;
   display: block;
   line-height: 1;
+}
+@media (min-width: 1024px) {
+  .post-article-item.feature .post-article-item_meta_date .day-of-month {
+    font-size: 4rem;
+  }
 }
 .post-article-item.feature .post-article-item_meta_date .month {
   text-transform: uppercase;
 }
-.post-article-item.feature .post-article-item_title {
-  font-size: 3rem;
+@media (min-width: 1024px) {
+  .post-article-item.feature .post-article-item_title {
+    font-size: 3rem;
+  }
 }
 
 .wp-block-cover {
@@ -913,7 +986,7 @@ h6 {
   border-radius: 1rem;
   padding: 30px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .wp-block-cover {
     margin: 0 4rem 2rem;
     padding: 30px;
@@ -929,7 +1002,7 @@ h6 {
   margin-bottom: 2rem;
   text-shadow: black 1px 0 10px;
 }
-@media (min-width: 1024px) {
+@media (min-width: 900px) {
   .wp-block-cover .wp-block-cover__inner-container .wp-block-heading {
     font-size: 3.5rem !important;
   }
@@ -966,16 +1039,19 @@ h6 {
   background-color: #cb0018;
 }
 
-.wp-block-quote {
+.wp-block-quote,
+blockquote {
   background-color: #edeef1;
   padding: 2rem 2.5rem;
   border-radius: 1rem;
   border-left: 2px solid #ea011d;
 }
-.wp-block-quote > * {
+.wp-block-quote > *,
+blockquote > * {
   margin: 0;
 }
-.wp-block-quote::before {
+.wp-block-quote::before,
+blockquote::before {
   content: "❝";
   display: block;
   font-size: 4rem;
@@ -998,16 +1074,32 @@ ol.wp-block-list li::marker {
   font-size: 1.4rem;
 }
 
+.alignnone,
+.aligncenter {
+  width: auto;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
+}
+
 .footer {
   background-color: #020202;
   color: #fcfcfc;
-  padding: 100px 0 20px;
+  padding: 2rem 0 20px;
+}
+@media (min-width: 900px) {
+  .footer {
+    padding-top: 100px;
+  }
 }
 .footer .footer_container .footer_nav {
   margin-bottom: 4rem;
   display: flex;
-  justify-content: space-between;
-  gap: 1.5rem;
+  justify-content: space-around;
+  flex-wrap: wrap;
+  gap: 2rem;
 }
 .footer .footer_container .footer_nav_title {
   font-size: 1.25rem;
@@ -1090,7 +1182,7 @@ body {
 }
 
 .wrapper,
-.content.wrap-text > :where(p, h1, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns, .wp-block-table, .wp-block-search) {
+.content.wrap-text > :where(p, blockquote, h1, h2, h3, h4, h5, h6, table, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns, .wp-block-table, .wp-block-search) {
   width: 100%;
   padding: 0 1rem;
   margin-left: auto;
@@ -1098,7 +1190,7 @@ body {
 }
 @media (min-width: 1320px) {
   .wrapper,
-  .content.wrap-text > :where(p, h1, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns, .wp-block-table, .wp-block-search) {
+  .content.wrap-text > :where(p, blockquote, h1, h2, h3, h4, h5, h6, table, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns, .wp-block-table, .wp-block-search) {
     max-width: 1320px;
   }
 }
@@ -1136,8 +1228,14 @@ body {
 }
 
 .section-block {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+@media (min-width: 770px) {
+  .section-block {
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+  }
 }
 
 .text-center {
@@ -1145,10 +1243,15 @@ body {
 }
 
 .content-posts_title {
-  font-size: 3.5rem;
-  margin-bottom: 1.5rem;
+  font-size: 2.25rem;
+  margin-bottom: 0.5em;
   margin-top: 0;
   font-weight: 900;
+}
+@media (min-width: 900px) {
+  .content-posts_title {
+    font-size: 3.5rem;
+  }
 }
 .content-posts_subtitle {
   font-size: 0.875rem;

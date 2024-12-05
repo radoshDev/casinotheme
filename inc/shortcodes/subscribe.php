@@ -16,13 +16,13 @@ function subscribe_section_shortcode($atts) {
     <section class="subscribe">
         <div class="subscribe_container">
             <?php get_template_part('templates/icons/subscribe', 'circle'); ?>
-            <h3 class="subscribe_container_title"><?php echo esc_html($atts['title']); ?></h3>
-            <form>
-                <div class="subscribe_container_input-box">
-                    <input type="text" class="subscribe_container_input-box_field" placeholder="Enter your email">
-                    <button class="subscribe_container_input-box_btn">Subscribe</button>
+            <h3 class="subscribe_title"><?php echo esc_html($atts['title']); ?></h3>
+            <form class="subscribe_form">
+                <div class="subscribe_input-box">
+                    <input type="text" class="subscribe_input-box_field" placeholder="Enter your email">
+                    <button class="subscribe_input-box_btn">Subscribe</button>
                 </div>
-                <label class="subscribe_container_agreement">
+                <label class="subscribe_agreement">
                     <input type="checkbox" />
                     I agree to the <a href="<?php echo get_site_url().'/privacy-policy' ?>" target="_blank">Privacy Policy</a>.
                 </label>

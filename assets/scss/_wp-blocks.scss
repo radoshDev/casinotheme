@@ -6,7 +6,7 @@
   min-height: 70vh;
   border-radius: 1rem;
   padding: 30px;
-  @include device(l) {
+  @include device(m) {
     margin: 0 4rem 2rem;
     padding: 30px;
     justify-content: flex-start;
@@ -20,7 +20,7 @@
     .wp-block-heading {
       margin-bottom: 2rem;
       text-shadow: black 1px 0 10px;
-      @include device(l) {
+      @include device(m) {
         font-size: 3.5rem !important;
       }
     }
@@ -41,7 +41,8 @@
   }
 }
 
-.wp-block-quote {
+.wp-block-quote,
+blockquote {
   background-color: #edeef1;
   padding: 2rem 2.5rem;
   border-radius: 1rem;
@@ -74,4 +75,14 @@ ol.wp-block-list {
       font-size: 1.4rem;
     }
   }
+}
+
+.alignnone,
+.aligncenter {
+  width: auto;
+}
+
+.aligncenter {
+  display: block;
+  margin: 0 auto;
 }

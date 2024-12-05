@@ -1,15 +1,20 @@
 @use "variables" as *;
+@use "./mixins" as *;
 
 .footer {
   background-color: $color-black;
   color: $color-white;
-  padding: 100px 0 20px;
+  padding: 2rem 0 20px;
+  @include device(m) {
+    padding-top: 100px;
+  }
   .footer_container {
     .footer_nav {
       margin-bottom: 4rem;
       display: flex;
-      justify-content: space-between;
-      gap: 1.5rem;
+      justify-content: space-around;
+      flex-wrap: wrap;
+      gap: 2rem;
 
       &_title {
         font-size: 1.25rem;

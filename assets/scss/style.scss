@@ -31,7 +31,7 @@ body {
 }
 
 .wrapper,
-.content.wrap-text > :where(p, h1, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns, .wp-block-table, .wp-block-search) {
+.content.wrap-text > :where(p, blockquote, h1, h2, h3, h4, h5, h6, table, .wp-block-image, .wp-block-heading, .wp-block-list, .wp-block-columns, .wp-block-table, .wp-block-search) {
   width: 100%;
   padding: 0 1rem;
   margin-left: auto;
@@ -82,8 +82,13 @@ body {
 }
 
 .section-block {
-  margin-top: 100px;
-  margin-bottom: 100px;
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+
+  @include device(s) {
+    margin-top: 6.25rem;
+    margin-bottom: 6.25rem;
+  }
 }
 .text-center {
   text-align: center;
@@ -91,10 +96,14 @@ body {
 
 .content-posts {
   &_title {
-    font-size: 3.5rem;
-    margin-bottom: 1.5rem;
+    font-size: 2.25rem;
+    margin-bottom: 0.5em;
     margin-top: 0;
     font-weight: 900;
+
+    @include device(m) {
+      font-size: 3.5rem;
+    }
   }
   &_subtitle {
     font-size: 0.875rem;

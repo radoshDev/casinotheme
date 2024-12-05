@@ -1,8 +1,33 @@
+@use "../mixins" as *;
+
 .latest-news {
   &_grid {
-    display: grid;
-    grid-template-columns: repeat(2, 1fr);
-    grid-template-rows: repeat(3, 210px);
-    gap: 30px;
+    display: flex;
+    flex-direction: column;
+    gap: 1.5rem;
+
+    @include device(s) {
+      flex-direction: row;
+    }
+    &_feature {
+      @include device(m) {
+        flex: 1;
+      }
+    }
+    &_posts {
+      display: flex;
+      flex-direction: column;
+      gap: 1.5rem;
+
+      @include device(m) {
+        flex: 1;
+      }
+
+      .post-article-item_image {
+        img {
+          max-width: 250px;
+        }
+      }
+    }
   }
 }
