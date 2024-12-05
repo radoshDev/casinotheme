@@ -11,6 +11,10 @@
 - [Installation](#installation)
 - [Customization Options](#customization-options)
 - [Shortcodes](#shortcodes)
+  - [brands-slider](#brands-slider)
+  - [latest-news](#latest-news)
+  - [latest-posts](#latest-posts)
+  - [subscribe-section](#subscribe-section)
 - [License](#license)
 - [Author](#author)
 
