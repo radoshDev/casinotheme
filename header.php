@@ -10,7 +10,7 @@
 <body <?php body_class() ?>>
 	<?php wp_body_open() ?>
 
-	<div class="header">
+	<header class="header">
 		<div class="wrapper header_container" id="header-mobile">
 			<div class="header_logo">
 				<a href="<?php echo get_home_url() ?>">
@@ -36,5 +36,5 @@
 			</div>
 			</div>
 		</div>
-	</div>
+	</header>
 

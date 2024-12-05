@@ -1119,7 +1119,7 @@ ol.wp-block-list li::marker {
   line-height: 1.8;
 }
 .footer .footer_container .footer_nav_info_mail {
-  display: inline-block;
+  display: block;
   font-size: 1.125rem;
   text-decoration: none;
   position: relative;
@@ -1370,6 +1370,7 @@ body {
   background-color: #edeef1;
   outline: none;
   padding: 0.5rem 1rem;
+  width: 100%;
 }
 .wpcf7-form .wpcf7-form-control-wrap .wpcf7-form-control:focus-within {
   border-bottom-color: #8f929d;

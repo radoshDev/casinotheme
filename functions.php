@@ -36,3 +36,11 @@ function casinotheme_debug($args)
 	print_r($args);
 	echo '</pre>';
 }
+
+
+add_filter('pre_get_document_title', function($title) {
+	if (is_front_page()) {
+			return 'Your Custom Homepage Title';
+	}
+	return $title;
+});

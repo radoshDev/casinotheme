@@ -4,9 +4,9 @@ function latest_news_shortcode($atts) {
 	// Extract shortcode attributes and set default values
 	$atts = shortcode_atts(
 			array(
-					'title'         => 'Our Latest News', // Default subtitle
-					'subtitle'      => 'Best of sports',  // Default title
-					'category_name' => 'news',           // Default category
+					'title'         => '', 
+					'subtitle'      => '', 
+					'category_name' => '',          
 			),
 			$atts,
 			'latest_news'
@@ -16,9 +16,12 @@ function latest_news_shortcode($atts) {
 	$query_args = array(
 			'post_type'      => 'post',
 			'posts_per_page' => 4,
-			'category_name'  => $atts['category_name'],
 			'post_status'    => 'publish',
 	);
+
+	if ($atts['category_name']) {
+		$query_args['category_name'] = $atts['category_name'];
+	}
 
 	// Fetch posts
 	$query = new WP_Query($query_args);
