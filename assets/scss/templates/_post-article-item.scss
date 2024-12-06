@@ -16,7 +16,7 @@
     display: block;
     flex: 1;
     @include device(m) {
-      flex: 2;
+      max-width: 200px;
     }
     img {
       aspect-ratio: 1 / 1;
@@ -29,9 +29,9 @@
     margin-top: 1.5rem;
     flex: 2;
 
-    @include device(m) {
-      flex: 3;
-    }
+    // @include device(m) {
+    //   flex: 3;
+    // }
 
     &.line {
       padding-left: 50px;
@@ -103,7 +103,12 @@
         align-items: flex-start;
         column-gap: 1.5rem;
       }
-
+      &_image {
+        @include device(m) {
+          max-width: initial;
+          max-height: 525px;
+        }
+      }
       &_meta {
         margin: 0;
         &_category {
