@@ -4,10 +4,11 @@ function latest_posts_shortcode($args) {
 	// Parse shortcode attributes
 	$atts = shortcode_atts(
 			array(
-					'category' => '',     // Default is empty
+					'category' => '',
 					'per_page' => 5,
 					'title' => '',
-					'subtitle' => ''      // Default number of posts per page
+					'subtitle' => '',
+					'author' => ''     
 			),
 			$args,
 			'latest-post'
@@ -17,9 +18,22 @@ function latest_posts_shortcode($args) {
 	$query_args = array(
 			'post_type'      => 'post',
 			'posts_per_page' => intval($atts['per_page']),
-			'category_name'  => sanitize_text_field($atts['category']),
 			'post_status'    => 'publish',
 	);
+
+	if (!empty($atts['category'])) {
+		$query_args['category_name'] = sanitize_text_field($atts['category']);
+	}
+
+	if (!empty($atts['author'])) {
+    if (is_numeric($atts['author'])) {
+        // If author is passed as an ID
+        $query_args['author'] = intval($atts['author']);
+    } else {
+        // If author is passed as a slug
+        $query_args['author_name'] = sanitize_title($atts['author']);
+    }
+}
 
 	// Create a new query
 	$query = new WP_Query($query_args);
@@ -27,11 +41,11 @@ function latest_posts_shortcode($args) {
 	// Initialize output variable
 	$output = '';
 	$output = '<div class="latest-posts wrapper section-block">';
-	if (isset($atts['subtitle'])) {
+	if (isset($atts['subtitle']) && $atts['subtitle']) {
 		$output .= '<p class="latest-posts_subtitle content-posts_subtitle">'.$atts['subtitle'].'</p>';
 	}
 
-	if (isset($atts['title'])) {
+	if (isset($atts['title']) && $atts['title']) {
 		$output .= '<h2 class="latest-posts_title content-posts_title">'.$atts['title'].'</h2>';
 	}
 

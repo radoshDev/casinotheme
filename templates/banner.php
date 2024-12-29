@@ -14,6 +14,8 @@ $publish_date = $args['publish_date'] ?? null; // Corrected this line
     <h1 class="casinotheme_banner_title wrapper">
         <?php if (is_category()) {
             echo single_cat_title('');
+        } else if (is_author()) {
+            echo get_the_author();
         } else {
             echo get_the_title();
         } ?>

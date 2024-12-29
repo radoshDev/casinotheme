@@ -5,12 +5,14 @@
 @use "header";
 @use "./not-found-page";
 @use "./search-page";
+@use "./author-page";
 @use "templates/latest-posts";
 @use "./templates/latest_news";
 @use "./templates/brands";
 @use "./templates/banner";
 @use "./templates/subscribe";
 @use "./templates/post-article-item";
+@use "./templates/comments";
 @use "wp-blocks";
 @use "footer";
 
