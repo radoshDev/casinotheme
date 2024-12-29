@@ -18,9 +18,20 @@ function casinotheme_assets()
 {
 	wp_enqueue_style('casinotheme-google-fonts', 'https://fonts.googleapis.com/css2?family=Noto+Sans:wght@100..900&display=swap', array(), null);
 
-	wp_enqueue_style('casinotheme-main', get_template_directory_uri() . '/assets/css/style-min.css');
+	wp_enqueue_style(
+		'casinotheme-main', 
+		get_template_directory_uri() . '/assets/css/style-min.css', 
+		array(), 
+		filemtime(get_stylesheet_directory() . '/style.css')
+	);
 
-	wp_enqueue_script('casinotheme_main', get_template_directory_uri() . '/assets/js/main.js', array(), false, true);
+	wp_enqueue_script(
+		'casinotheme_main', 
+		get_template_directory_uri() . '/assets/js/main.js', 
+		array(), 
+		filemtime(get_stylesheet_directory() . '/style.css'), 
+		true
+	);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {
 		wp_enqueue_script('comment-reply');
