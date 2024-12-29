@@ -13,7 +13,7 @@ $author_url = get_author_posts_url($author_id);
 $author = $author_id ? (object) [
     'name' => get_the_author_meta('display_name', $author_id),
     'image' => $custom_avatar ?? get_avatar_url($author_id, ['size' => 96]),
-		'url' => $author_url
+	'url' => $author_url
 ] : null;
 
 $publish_date = get_the_date('U'); 
@@ -28,7 +28,10 @@ $publish_date = get_the_date('U');
     'publish_date' => $publish_date,
 ]) ?>
 	<div class="wrapper">
-		<?php the_content();		?>
+		<?php 
+        the_content();		
+        comments_template();
+        ?>
 	</div>
 </main>
 <?php get_footer() ?>
