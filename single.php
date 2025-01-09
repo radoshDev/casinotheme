@@ -17,6 +17,9 @@ $author = $author_id ? (object) [
 ] : null;
 
 $publish_date = get_the_date('U'); 
+
+$title = get_the_title();
+$permalink = get_the_permalink();
 ?>
 
 
@@ -29,7 +32,12 @@ $publish_date = get_the_date('U');
 ]) ?>
 	<div class="wrapper">
 		<?php 
-        the_content();		
+        the_content();
+        get_template_part(
+            'templates/share-on-social-media', 
+            null, 
+            array("show-title" => true, 'post-title' => $title, 'post-url' => $permalink)
+        );	
         comments_template();
         ?>
 	</div>

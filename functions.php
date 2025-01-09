@@ -29,8 +29,7 @@ function casinotheme_assets()
 		'casinotheme_main', 
 		get_template_directory_uri() . '/assets/js/main.js', 
 		array(), 
-		filemtime(get_stylesheet_directory() . '/style.css'), 
-		true
+		filemtime(get_stylesheet_directory() . '/style.css')
 	);
 
 	if (is_singular() && comments_open() && get_option('thread_comments')) {

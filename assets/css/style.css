@@ -1114,6 +1114,58 @@ h6 {
   background-color: #cb0018;
 }
 
+.share-on-social-media {
+  position: relative;
+  z-index: 5;
+  display: flex;
+  gap: 1rem;
+  justify-content: center;
+  align-items: center;
+  margin-top: 1.3rem;
+}
+.share-on-social-media_title {
+  font-size: 1.2rem;
+  font-weight: bold;
+}
+.share-on-social-media_buttons {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  gap: 0.8rem;
+}
+.share-on-social-media_buttons li .share-on-social-media_button {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #020202;
+  color: #fcfcfc;
+  border-radius: 3px;
+  border: none;
+}
+.share-on-social-media_buttons li .share-on-social-media_button:hover {
+  color: #fcfcfc;
+  cursor: pointer;
+}
+.share-on-social-media #share-copy-link {
+  position: relative;
+}
+.share-on-social-media #share-copy-link .share-notification {
+  opacity: 0;
+  position: absolute;
+  top: 50%;
+  right: 0;
+  transform: translate(105%, -40%);
+  color: #020202;
+  width: -moz-max-content;
+  width: max-content;
+}
+.share-on-social-media #share-copy-link .share-notification.show {
+  opacity: 1;
+}
+
 .wp-block-cover {
   margin: 0 1.25rem 2rem;
   min-height: 70vh;
